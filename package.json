@@ -1,0 +1,64 @@
+{
+  "name": "dsh-otel",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness plugin: export OpenTelemetry spans for turns, steps, and tool calls from a session log, over OTLP/HTTP or stdout, through the otel_export tool",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "dsh-otel": "./bin/dsh-otel.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./session": "./src/session.js",
+    "./spans": "./src/spans.js",
+    "./otlp": "./src/otlp.js",
+    "./export": "./src/export.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "src",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwilson411/dsh-otel.git"
+  },
+  "homepage": "https://github.com/jwilson411/dsh-otel#readme",
+  "bugs": {
+    "url": "https://github.com/jwilson411/dsh-otel/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "opentelemetry",
+    "otel",
+    "otlp",
+    "tracing",
+    "observability"
+  ],
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": "^0.1.1-rc.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "0.1.1-rc.2"
+  }
+}
